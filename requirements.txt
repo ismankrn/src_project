@@ -21,3 +21,6 @@ pandas
 numpy
 statsmodels
 sklearn
+tensorboard==2.0.2
+tensorflow==2.0.0
+tensorflow-estimator==2.0.1
