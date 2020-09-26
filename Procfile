@@ -1,2 +1,1 @@
-web gunicorn QSAR:app
-
+web gunicorn src-project:app
