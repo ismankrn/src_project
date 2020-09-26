@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}Home Page{% endblock %}
+{% block content %}
+<div class="container shadow-sm mainmenu"  >
+    <section>
+      <div class="col-7">
+        <form method="POST" enctype=multipart/form-data>
+          <h5>Please upload the data set</h5>
+          <div class="custom-file">
+              <label for="file_ord">Orders data set:</label><br>
+              <input type="file" id="file_ord" name="file_ord" required><br><br>
+              <label for="file_ord_prod">Order product data set:</label><br>
+              <input type="file" id="file_ord_prod" name="file_ord_prod" required><br><br>
+          </div><br>
+          <input type="hidden" name="generate" value=0>
+          <button type="submit" class="btn btn-primary" value="send">Upload</button>
+        </form>
+        <br><br>
+        {% if (message=="Success") :%}
+        <h6>Please downlod the output using
+          <a href="{{ url_for('download_file')}}">
+              <button type="button" class="btn btn-link"> this link </button>
+          </a>
+        </h6>
+        {% endif %}
+      </div>
+</div>
+
+{% endblock %}

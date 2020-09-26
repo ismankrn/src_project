@@ -1,0 +1,38 @@
+.linkbtn{
+    float: right;
+}
+.outl{
+    outline-style: solid;
+}
+
+.pilihan:hover {
+    text-decoration: none;
+    background-color: rgb(71, 156, 236);
+    outline-style: solid;
+    outline-color: blue;
+    color: black;
+}
+
+.desc{
+    min-height: 200px;
+}
+
+.card{
+    margin-bottom: 40px;
+}
+
+.mainmenu{
+    min-height: 60vh;
+}
+
+body{
+    margin: 0;
+}
+
+.pilihan {
+    text-decoration: none;
+    color: black;
+}
+.free_space{
+    margin: 150px;
+}
