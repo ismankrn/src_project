@@ -21,3 +21,4 @@ pandas
 numpy
 statsmodels
 sklearn
+tensorflow
