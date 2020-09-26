@@ -1,9 +1,7 @@
 from flask import Flask, redirect, url_for, render_template, request, send_from_directory
 import os
 import pandas
-from data_prep import *
-from model_pred_sup import *
-from model_pred_uns import *
+from model_dev import *
 import shutil
 
 app = Flask(__name__)
@@ -31,10 +29,8 @@ def home():
             file_ord_prod.save("./uploads/{}".format(file_ord_prod.filename))
 
             # data prep
-            prep_data(file_ord.filename, file_ord_prod.filename)
+            model_dev(file_ord.filename, file_ord_prod.filename)
             print("prep_data OK")
-            pred_sup(file_ord.filename)
-            pred_uns(file_ord.filename)
             shutil.make_archive("outputs", 'zip', "./outputs")
 
             return render_template("index.html", message="Success")
