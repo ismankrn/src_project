@@ -25,15 +25,14 @@ def home():
         else:
             # save file
             file_ord = request.files["file_ord"]
-            # destination = "/".join([target,file_ord.filename])
             file_ord.save("./uploads/{}".format(file_ord.filename))
 
             file_ord_prod = request.files["file_ord_prod"]
-            # destination = "/".join([target,file_ord_prod.filename])
             file_ord_prod.save("./uploads/{}".format(file_ord_prod.filename))
 
             # data prep
             prep_data(file_ord.filename, file_ord_prod.filename)
+            print("prep_data OK")
             pred_sup(file_ord.filename)
             pred_uns(file_ord.filename)
             shutil.make_archive("outputs", 'zip', "./outputs")
